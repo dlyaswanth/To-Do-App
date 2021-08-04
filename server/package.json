@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start":"node app",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "npm install client && npm build client"
   },
   "keywords": [
     "to-do",
