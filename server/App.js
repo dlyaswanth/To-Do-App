@@ -20,6 +20,13 @@ app.use(bodyparser.urlencoded({extended: true}))
 app.use(require('./routes/auth'))
 app.use(require('./routes/tasks'))
 app.use(express.json())
+if(process.env.NODE_ENV=="production"){
+    app.use(express.static('client/build'))
+        const path=require('path')
+        app.get("*",(req,res)=>{
+            res.sendFile(path.resolve(__dirname,'client','src','index.html'))
+        })
+        }
 app.listen(PORT,()=>{
     console.log("Server Running on PORT ",PORT)
 })
