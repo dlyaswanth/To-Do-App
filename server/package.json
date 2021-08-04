@@ -4,7 +4,7 @@
   "description": "to-do server side",
   "main": "app.js",
   "scripts": {
-    "start":"node app",
+    "start":"node app.js",
     "heroku-postbuild": "npm install client && npm build client"
   },
   "keywords": [
