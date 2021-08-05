@@ -4,6 +4,7 @@ const app = express()
 const bodyparser = require('body-parser');
 const {MONGOURI} = require('./config/keys.js');
 const mongoose = require('mongoose')
+const path=require('path')
 mongoose.connect(MONGOURI,{
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -21,10 +22,9 @@ app.use(require('./routes/auth'))
 app.use(require('./routes/tasks'))
 app.use(express.json())
 if(process.env.NODE_ENV=="production"){
-    app.use(express.static('public'))
-        const path=require('path')
+    app.use(express.static(path.join(__dirname,'public')));
         app.get("*",(req,res)=>{
-            res.sendFile(path.resolve(__dirname,'client/server/public/index.html'))
+            res.sendFile(path.join(__dirname,'public/index.html'))
         })
         }
 app.listen(PORT,()=>{
