@@ -2,9 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "description": "to-do server side",
-  "main": "app.js",
+  "main": "App.js",
   "scripts": {
-    "start":"node app.js",
+    "start":"node App.js",
     "heroku-postbuild": "cd client && NPM_CONFIG_PRODUCTION=false && npm install && npm run build "
   },
   "keywords": [
