@@ -28,7 +28,7 @@ export class TaskComponent implements OnInit {
       const headers={'content-type':'application/json'};
       const email=localStorage.getItem('todolist')?.toString().split(' ').pop()
       const body={"email":email};
-      const url='http://localhost:4201/show-task'
+      const url='show-task'
       this.httpClient.post(url,body,{'headers':headers})
       .subscribe(res=>{
         this.task=res;
@@ -38,7 +38,7 @@ export class TaskComponent implements OnInit {
     const headers={'content-type':'application/json'};
     const email=localStorage.getItem('todolist')?.toString().split(' ').pop();
     const body={"email":email,"id":id};
-    const url='http://localhost:4201/remove'
+    const url='remove'
     this.httpClient.post(url,body,{'headers':headers})
     .subscribe(res=>{
       this.task=res;

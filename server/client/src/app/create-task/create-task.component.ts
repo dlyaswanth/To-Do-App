@@ -29,7 +29,7 @@ export class CreateTaskComponent implements OnInit {
       const headers={'content-type':'application/json'};
       const email=localStorage.getItem('todolist')?.toString().split(' ').pop()
       const body={"email":email,"title":title,"startDate":startDate,"endDate":endDate,"time":time};
-      const url='http://localhost:4201/create-task'
+      const url='create-task'
       this.httpClient.post(url,body,{'headers':headers})
       .subscribe(res=>{
         this.toast.success('Task Added Successfully');

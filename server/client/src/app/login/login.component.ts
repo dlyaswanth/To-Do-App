@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     {
       const headers={'content-type':'application/json'};
       const body={"email":email,"password":password};
-      const signurl='http://localhost:4201/login'
+      const signurl='login'
       this.httpClient.post(signurl,body,{'headers':headers})
       .subscribe(res=>{
         localStorage.setItem('todolist',"logged In with email: "+email);

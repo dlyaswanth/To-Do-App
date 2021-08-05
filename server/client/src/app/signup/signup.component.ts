@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
     {
       const headers={'content-type':'application/json'};
       const body={"email":email,"password":password};
-      const signurl='http://localhost:4201/signup'
+      const signurl='signup'
       this.httpClient.post(signurl,body,{'headers':headers})
       .subscribe(res=>{
         this.toastr.success('User Saved !');

@@ -21,10 +21,10 @@ app.use(require('./routes/auth'))
 app.use(require('./routes/tasks'))
 app.use(express.json())
 if(process.env.NODE_ENV=="production"){
-    app.use(express.static('client/dist'))
+    app.use(express.static('public'))
         const path=require('path')
         app.get("*",(req,res)=>{
-            res.sendFile(path.resolve(__dirname,'dist','client','index.html'))
+            res.sendFile(path.resolve(__dirname,'public/index.html'))
         })
         }
 app.listen(PORT,()=>{
