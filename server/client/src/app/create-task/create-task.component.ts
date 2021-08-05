@@ -26,7 +26,7 @@ export class CreateTaskComponent implements OnInit {
     this.toast.error('Enter All fields');
     else
     {
-      this.toastr.info('Please Wait !');
+      this.toast.info('Please Wait !');
       const headers={'content-type':'application/json'};
       const email=localStorage.getItem('todolist')?.toString().split(' ').pop()
       const body={"email":email,"title":title,"startDate":startDate,"endDate":endDate,"time":time};
