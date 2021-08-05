@@ -28,6 +28,7 @@ export class SignupComponent implements OnInit {
     }
     else
     {
+      this.toastr.info('Please Wait !');
       const headers={'content-type':'application/json'};
       const body={"email":email,"password":password};
       const signurl='signup'
