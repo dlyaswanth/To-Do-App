@@ -24,7 +24,7 @@ if(process.env.NODE_ENV=="production"){
     app.use(express.static('public'))
         const path=require('path')
         app.get("*",(req,res)=>{
-            res.sendFile(path.resolve(__dirname,'public/index.html'))
+            res.sendFile(path.resolve(__dirname,'/client/server/public/index.html'))
         })
         }
 app.listen(PORT,()=>{
